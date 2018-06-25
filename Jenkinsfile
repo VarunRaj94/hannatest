@@ -17,6 +17,11 @@ node {
                 url: 'https://github.com/VarunRaj94/hannatest.git/'
             ]]
         ])
+# Gemfile
+source "https://rubygems.org"
+
+gem "fastlane"
+gem install bundler && bundle update
          sh "fastlane scan"   
 //sh "bundle exec fastlane gym"
 
