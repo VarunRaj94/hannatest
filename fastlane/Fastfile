@@ -26,15 +26,18 @@ default_platform :iOS
 
 platform :iOS do
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
-  desc "Push a new beta build to TestFlight"
-  lane :beta do
-    build_app(scheme: "MaterialDesign")
-    upload_to_testflight
+ # desc "Push a new beta build to TestFlight"
+#  lane :beta do
+ #   build_app(scheme: "MaterialDesign")
+#    upload_to_testflight
+ # end
+
+before_all do
+    setup_circle_ci
   end
-
 
 
 
