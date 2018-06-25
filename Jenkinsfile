@@ -20,8 +20,8 @@ node {
 # Gemfile
 source "https://rubygems.org"
 
-gem "fastlane"
-gem install bundler && bundle update
+sudo gem "fastlane"
+sudo gem install bundler && bundle update
          sh "fastlane scan"   
 //sh "bundle exec fastlane gym"
 
