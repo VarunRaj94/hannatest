@@ -17,7 +17,7 @@ node {
                 url: 'https://github.com/VarunRaj94/hannatest.git/'
             ]]
         ])
-# Gemfile
+
 source "https://rubygems.org"
 
 sudo gem install fastlane -NV
