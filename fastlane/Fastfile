@@ -39,6 +39,10 @@ before_all do
     setup_circle_ci
   end
 
+desc "Build and run tests"
+  lane :test do
+    scan
+  end
 
 
     end
