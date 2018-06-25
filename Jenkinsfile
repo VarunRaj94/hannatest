@@ -17,7 +17,7 @@ node {
                 url: 'https://github.com/VarunRaj94/hannatest.git/'
             ]]
         ])
-     //    sh "fastlane scan"   
+         sh "fastlane scan"   
 //sh "bundle exec fastlane gym"
 
     }
