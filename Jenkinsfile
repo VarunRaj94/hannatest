@@ -18,8 +18,7 @@ node {
             ]]
         ])
  sh "fastlane init"
-// sh "fastlane scan"
-  sh "fastlane pilot"       
+ sh "fastlane scan"       
  sh "fastlane beta"
     }
 }
