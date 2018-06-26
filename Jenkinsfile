@@ -19,7 +19,7 @@ node {
         ])
  sh "fastlane init"
 // sh "fastlane scan"
-  sh "fastlane gym"       
+  sh "fastlane pilot"       
  sh "fastlane beta"
     }
 }
