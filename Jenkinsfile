@@ -4,6 +4,22 @@ env.USER = 'iosbuilds'
 // backwards compat with old branch variable
 env.GIT_BRANCH = env.BRANCH_NAME
 
+def getWorkspace() {
+    pwd().replace("%2F", "_")
+}
+
+def wipeWorkspace(String workspace) {
+    if (workspace) {
+        sh "find ${workspace} -mindepth 4 -depth -delete"
+    }
+}
+
+def isRelease() {
+    if (env.RELEASE == "true") {
+      return true
+    }
+}
+
 node {
     stage('Checkout/Build/Test') {
         // Checkout files.
@@ -27,6 +43,10 @@ node {
    //      } else {
    //        sh "fastlane build_alpha"
     //     }
- sh "fastlane scan"
+ // sh "fastlane scan"
+         // Mark the code unit tests 'stage'....
+         stage 'Tests'
+         // reset the simulators before running tests
+         sh "fastlane tests" 
     }
 }
