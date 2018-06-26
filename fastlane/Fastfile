@@ -29,19 +29,81 @@ platform :iOS do
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
 
- # desc "Push a new beta build to TestFlight"
-#  lane :beta do
- #   build_app(scheme: "MaterialDesign")
-#    upload_to_testflight
- # end
+  before_all do
+    ENV['DELIVER_WHAT_TO_TEST'] = git_commit_log
+    ENV['SIGH_CERTIFICATE_ID'] = '9Q5433VBYW'
+    GIT_BRANCH = ENV['GIT_BRANCH'] || 'unknown'
 
-before_all do
-    setup_circle_ci
+    GIT_BRANCH_ID = GIT_BRANCH.dup
+    GIT_BRANCH_ID.gsub! '/', '.'
+    GIT_BRANCH_ID.gsub! /[^A-Za-z0-9\-.]/, "-"
+
   end
 
-desc "Build and run tests"
-  lane :test do
-    scan
+lane :build do |options|
+
+      project = 'hannatest/MaterialDesign.xcodeproj'
+
+      increment_build_number(
+        xcodeproj: project,
+        build_number: ENV['BUILD_ID']
+      )
+
+      increment_version_number(
+        xcodeproj: project,
+        version_number: '1.4.1',
+      )
+
+      if options[:release]
+        app_identifier = 'cogzidel.MaterialDesign'
+        display_name = 'Materialdesign'
+        # Disable API server selection in settings app
+        set_info_plist_value(
+          path: './hannatest/MaterialDesign/info.plist',
+          key: 'isTest',
+          value: false,
+        )
+        # Remove ability to load arbitrary TLS connections (may be added by developers)
+        set_info_plist_value(
+          path: './hannatest/MaterialDesign/info.plist',
+          key: 'NSAppTransportSecurity',
+          value:  { 'NSAllowsArbitraryLoads' => false }
+        )
+        sigh(
+          app_identifier: app_identifier,
+        )
+      else
+        app_identifier = 'cogzidel.MaterialDesign.alpha.' + GIT_BRANCH_ID
+        display_name = 'Materialdesign' + GIT_BRANCH
+        sigh(
+          app_identifier: '*',
+          adhoc: '1',
+        )
+      end
+
+      update_app_identifier(
+        app_identifier: app_identifier,
+        plist_path: 'Materialdesign/Info.plist',
+        xcodeproj: 'hannatest/MaterialDesign.xcodeproj',
+      )
+
+      update_info_plist(
+        display_name: display_name,
+        plist_path: 'Materialdesign/Info.plist',
+        xcodeproj: 'hannatest/MaterialDesign.xcodeproj',
+      )
+
+      ENV["PROFILE_UUID"] = lane_context[SharedValues::SIGH_UDID]
+
+      gym(
+        scheme: options[:release] ? "Nutrition Release" : "Nutrition",
+        configuration: options[:release] ? "Release" : "Beta",
+        workspace: "hannatest/MaterialDesign.xcworkspace",
+        cargos: '-derivedDataPath ./build',
+        clean: false,
+        use_legacy_build_api: true,
+      )
+
   end
 
 

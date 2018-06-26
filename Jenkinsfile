@@ -18,11 +18,15 @@ node {
             ]]
         ])
 
-source "https://rubygems.org"
-
-sudo gem install fastlane -NV
-         sh "fastlane scan"   
-//sh "bundle exec fastlane gym"
+// Mark the code build 'stage'....
+         stage 'Build'
+         sh "security list-keychains -s ~/Library/Keychains/iosbuilds.keychain"
+         sh "security unlock-keychain -p ${env.KEYCHAIN_PASSWORD} /Users/iosbuilds/Library/Keychains/iosbuilds.keychain"
+         if (isRelease()) {
+           sh "fastlane build_release"
+         } else {
+           sh "fastlane build_alpha"
+         }
 
     }
 }
