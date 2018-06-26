@@ -17,14 +17,7 @@ node {
                 url: 'https://github.com/VarunRaj94/hannatest'
             ]]
         ])
-      //     sh 'sudo gem install fastlane -NV'
-  //   sh "export LC_ALL=en_US.UTF-8"
-  //    sh "export LANG=en_US.UTF-8"   
-  //  sh "bundle exec fastlane beta" 
-        
-   
  sh "fastlane init"
-// sh "fastlane scan"   
 
     }
 }
