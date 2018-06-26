@@ -48,7 +48,7 @@ platform :iOS do
   end
 
 lane :tests do
-    run_tests('MaterialDesign')
+    run_tests('hannatest')
   end
 
 lane :build do |options|
