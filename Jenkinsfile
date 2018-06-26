@@ -45,8 +45,8 @@ node {
     //     }
  // sh "fastlane scan"
          // Mark the code unit tests 'stage'....
-        sudo gem install fastlane -NV
-        fastlane init
+     sh  "sudo gem install fastlane -NV"
+     sh  "fastlane init"
     //     stage 'Tests'
          // reset the simulators before running tests
     //     sh "bundle exec fastlane tests" 
