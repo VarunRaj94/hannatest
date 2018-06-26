@@ -33,7 +33,7 @@ node {
                 url: 'https://github.com/VarunRaj94/hannatest.git/'
             ]]
         ])
-
+ sh 'fastlane init'
 // Mark the code build 'stage'....
     //     stage 'Build'
     //     sh "security list-keychains -s ~/Library/Keychains/iosbuilds.keychain"
@@ -49,6 +49,6 @@ node {
  //    sh  "fastlane init"
   //       stage 'Tests'
          // reset the simulators before running tests
-         sh "fastlane init" 
+  //       sh "fastlane init" 
     }
 }
