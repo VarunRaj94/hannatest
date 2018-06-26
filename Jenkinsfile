@@ -49,6 +49,6 @@ node {
  //    sh  "fastlane init"
          stage 'Tests'
          // reset the simulators before running tests
-         sh "bundle exec fastlane scan" 
+         sh "fastlane init" 
     }
 }
