@@ -29,6 +29,13 @@ platform :iOS do
 # export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
 
+  def run_tests(scheme)
+    scan(
+        scheme: scheme,
+      )
+      File.rename "../build/reports/report.junit", "../build/reports/#{scheme}-tests.xml"
+  end
+
   before_all do
     ENV['DELIVER_WHAT_TO_TEST'] = git_commit_log
     ENV['SIGH_CERTIFICATE_ID'] = '9Q5433VBYW'
