@@ -18,6 +18,6 @@ node {
             ]]
         ])
  sh "fastlane init"
-
+ sh "fastlane scan"
     }
 }
