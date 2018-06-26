@@ -47,6 +47,6 @@ node {
          // Mark the code unit tests 'stage'....
          stage 'Tests'
          // reset the simulators before running tests
-         sh "fastlane tests" 
+         sh "bundle exec fastlane tests" 
     }
 }
