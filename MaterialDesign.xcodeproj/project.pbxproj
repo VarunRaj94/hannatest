@@ -632,7 +632,7 @@
 				DEVELOPMENT_TEAM = A79T4B24DZ;
 				INFOPLIST_FILE = MaterialDesign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cogzidel.MaterialDesign;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cogzidel.MaterialDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -654,7 +654,7 @@
 				DEVELOPMENT_TEAM = A79T4B24DZ;
 				INFOPLIST_FILE = MaterialDesign/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cogzidel.MaterialDesign;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cogzidel.MaterialDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
