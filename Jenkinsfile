@@ -22,7 +22,7 @@ node {
     }	
 
     stage('Code Coverage') {
-	sh '/usr/local/bin/slather coverage --jenkins --html --scheme MaterialDesign MaterialDesign.xcworkspace/'
+	sh '/usr/local/bin/slather coverage --jenkins --html --scheme MaterialDesign MaterialDesign.xcodeproj/'
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'Coverage Report'])
     }
 
