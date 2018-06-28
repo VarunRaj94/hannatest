@@ -12,14 +12,9 @@ node {
             ]]
         ])
 	}
-	
-     stage('bundler') {
-            // we use ruby's bundler to ensure our versions of cocoapods and fastlane are correct
-          sh 'bundle install' 
-     }
 
     stage('cocoapods') {
-         sh 'bundle exec pod install' // cocoapods is used to manage our third-party dependencies
+         sh '/usr/local/bin/pod install' // cocoapods is used to manage our third-party dependencies
     }
 
     stage('Build') {
