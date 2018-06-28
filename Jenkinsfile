@@ -1,4 +1,4 @@
-node('Mac') {
+node {
     stage('Checkout') {
         // Checkout files.
         checkout([
