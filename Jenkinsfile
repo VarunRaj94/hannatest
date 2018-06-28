@@ -22,19 +22,10 @@ node {
     }	
 
     stage('Code Coverage') {
-	sh '/usr/local/bin/slather coverage --jenkins --html --scheme MaterialDesign MaterialDesign.xcworkspace/'
+	sh '/usr/local/bin/slather coverage --jenkins --html --scheme MaterialDesign MaterialDesign.xcodeproj/'
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'Coverage Report'])
     }
 
-
-
-
-
-
-
-
-
-
-
-
 //sh 'xcodebuild -workspace MaterialDesign.xcworkspace -scheme "MaterialDesign" -configuration "Release" clean archive -archivePath /Users/apple/Desktop DEVELOPMENT_TEAM=A79T4B24DZ'
+
+}
