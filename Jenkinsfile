@@ -12,6 +12,15 @@ node {
             ]]
         ])
 	}
+	
+     stage('bundler') {
+            // we use ruby's bundler to ensure our versions of cocoapods and fastlane are correct
+          sh 'bundle install' 
+     }
+
+    stage('cocoapods') {
+         sh 'bundle exec pod install' // cocoapods is used to manage our third-party dependencies
+    }
 
     stage('Build') {
         sh 'xcodebuild -workspace MaterialDesign.xcworkspace -scheme "MaterialDesign" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=11.2" -enableCodeCoverage YES | /usr/local/bin/ocunit2junit' 
