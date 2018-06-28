@@ -25,7 +25,11 @@ node {
 	sh '/usr/local/bin/slather coverage --jenkins --html --scheme MaterialDesign MaterialDesign.xcodeproj/'
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'test-reports', reportFiles: 'index.html', reportName: 'Coverage Report'])
     }
-
+	
+    stage('CheckStyle') {
+	sh '/usr/local/bin/swiftlint lint --reporter checkstyle > checkstyle.xml || true'
+        step([$class: 'CheckStylePublisher', canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'checkstyle.xml', unHealthy: ''])
+    }
 //sh 'xcodebuild -workspace MaterialDesign.xcworkspace -scheme "MaterialDesign" -configuration "Release" clean archive -archivePath /Users/apple/Desktop DEVELOPMENT_TEAM=A79T4B24DZ'
 
 }
