@@ -3,3 +3,4 @@ input_format: profdata
 coverage_service: cobertura_xml
 scheme: MaterialDesign
 xcodeproj: MaterialDesign.xcworkspace
+output_directory: ./test-reports
