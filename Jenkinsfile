@@ -23,7 +23,6 @@ node {
 
     stage('Code Coverage') {
 	sh '/usr/local/bin/slather coverage --jenkins --html --scheme MaterialDesign MaterialDesign.xcodeproj/'
-        archive (includes: 'pkg/*.gem')
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'test-reports', reportFiles: 'index.html', reportName: 'Coverage Report'])
     }
 	
