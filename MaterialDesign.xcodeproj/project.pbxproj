@@ -325,8 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaterialDesign/Pods-MaterialDesign-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaterialDesign/Pods-MaterialDesign-resources.sh\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		255E4E9EFE3D5C19A81A1CCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -450,11 +449,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MaterialDesign/Pods-MaterialDesign-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/UIImage+PDF/UIImage_PDF.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImage_PDF.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

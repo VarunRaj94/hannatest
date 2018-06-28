@@ -6,6 +6,7 @@ target 'MaterialDesign' do
   use_frameworks!
   pod 'Material'
   pod 'UIImage+PDF'
+  pod 'SwiftLint'
 
   # Pods for MaterialDesign
 
