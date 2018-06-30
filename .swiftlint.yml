@@ -1,0 +1,7 @@
+line_length:
+ - 300 # warning
+ - 400 # error
+type_body_length:
+ - 200 # warning
+ - 700 # error
+
