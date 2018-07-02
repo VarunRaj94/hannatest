@@ -249,14 +249,12 @@
 						DevelopmentTeam = A79T4B24DZ;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 4C838C461F2F9C4200C06CA7;
 					};
 					4C838C681F2F9C4600C06CA7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = A79T4B24DZ;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 4C838C461F2F9C4200C06CA7;
 					};
 				};
 			};
@@ -590,14 +588,12 @@
 			baseConfigurationReference = 39724B2D543472CDA7CD7587 /* Pods-MaterialDesignTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = A79T4B24DZ;
 				INFOPLIST_FILE = MaterialDesignTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maulik.MaterialDesignTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaterialDesign.app/MaterialDesign";
 			};
 			name = Debug;
 		};
@@ -606,14 +602,12 @@
 			baseConfigurationReference = 58F724B48A23DB0639D25BD5 /* Pods-MaterialDesignTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = A79T4B24DZ;
 				INFOPLIST_FILE = MaterialDesignTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maulik.MaterialDesignTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MaterialDesign.app/MaterialDesign";
 			};
 			name = Release;
 		};
@@ -627,8 +621,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maulik.MaterialDesignUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MaterialDesign;
 			};
 			name = Debug;
 		};
@@ -642,8 +636,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maulik.MaterialDesignUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MaterialDesign;
 			};
 			name = Release;
 		};
