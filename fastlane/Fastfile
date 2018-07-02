@@ -48,7 +48,7 @@ lane :metrics do
 end
 
 lane :tests do
-  run_tests(scheme: "MaterialDesignTests")
+  run_tests(scheme: "MaterialDesign")
 end
 
 end
