@@ -46,6 +46,11 @@ lane :metrics do
     swiftlint(output_file: "./reports/swiftlint.txt", ignore_exit_status: true)
     sonar
 end
+
+lane :tests do
+  run_tests(scheme: "MaterialDesignTests")
+end
+
 end
 
 
