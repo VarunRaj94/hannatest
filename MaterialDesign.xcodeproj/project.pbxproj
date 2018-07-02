@@ -255,7 +255,6 @@
 						DevelopmentTeam = A79T4B24DZ;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 4C838C461F2F9C4200C06CA7;
 					};
 				};
 			};
@@ -624,7 +623,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MaterialDesign;
 			};
 			name = Debug;
 		};
@@ -640,7 +638,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = MaterialDesign;
 			};
 			name = Release;
 		};
