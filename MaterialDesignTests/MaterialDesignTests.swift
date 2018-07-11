@@ -33,8 +33,8 @@ class MaterialDesignTests: XCTestCase {
         }
     }
     
-    func testFail() {
-        XCTAssertEqual(2+5, 1)
-    }
+//    func testFail() {
+//        XCTAssertEqual(2+5, 1)
+//    }
     
 }
